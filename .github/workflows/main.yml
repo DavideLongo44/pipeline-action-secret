@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del Codice
+        uses: actions/checkout@v2
+
+      - name: Configurare Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Installare le Dipendenze
+        run: npm install
+
+      - name: Eseguire i Test
+        run: npm test
+
+      - name: Utilizzare i Secrets
+        run: |
+          echo "SECRET_API_KEY=$SECRET_API_KEY" >> $GITHUB_ENV
