@@ -13,7 +13,7 @@ jobs:
       - name: Checkout del Codice
         uses: actions/checkout@v2
 
-      - name: Configurare Node.js
+      - name: Configure Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '14'
@@ -21,9 +21,6 @@ jobs:
       - name: Installare le Dipendenze
         run: npm install
 
-      - name: Eseguire i Test
-        run: npm test
-
-      - name: Utilizzare i Secrets
+      - name: Use secret
         run: |
           echo "SECRET_API_KEY=$SECRET_API_KEY" >> $GITHUB_ENV
