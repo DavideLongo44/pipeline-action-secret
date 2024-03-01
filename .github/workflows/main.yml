@@ -3,12 +3,13 @@ name: CI/CD Pipeline
 on:
   workflow_dispatch: 
     inputs:
-      environment:
+      environment: 
         type: environment
         required: true
 
 jobs:
   build:
+    environment: "${{ inputs.environment }}"
     runs-on: ubuntu-latest
 
     steps:
