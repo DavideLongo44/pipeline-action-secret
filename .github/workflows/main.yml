@@ -12,17 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout del Codice
-        uses: actions/checkout@v2
+      
+      - uses: actions/checkout@v2
 
-      - name: Configure Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Installare le Dipendenze
-        run: npm install 
-
-      - name: Use secret
-        run: |
-          echo "SECRET_API_KEY=$SECRET_API_KEY" >> $GITHUB_ENV
+     
+      - run: echo "Die Environment ist ${{inputs.environment }}"
+      - run: echo "Der wert Environmentvariable description ist ${{ var.DESCRIPRTION }}"
+      - run: echo "Der wert Environmentvariable description ist ${{ var.DESCRIPRTION }}"
+      - run: echo "mein benutzer-secret ist ${{ secret.MONGODB_USERNAME }}"
+      
+      - run: |
+         echo "SECRET_API_KEY=$SECRET_API_KEY" >> $GITHUB_ENV
