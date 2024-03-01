@@ -19,7 +19,7 @@ jobs:
           node-version: '14'
 
       - name: Installare le Dipendenze
-        run: npm install
+        run: npm install 
 
       - name: Use secret
         run: |
