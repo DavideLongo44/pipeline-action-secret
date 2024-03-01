@@ -17,8 +17,7 @@ jobs:
 
      
       - run: echo "Die Environment ist ${{inputs.environment }}"
-      - run: echo "Der wert Environmentvariable description ist ${{ var.DESCRIPTION }}"
-      - run: echo "Der wert Environmentvariable description ist ${{ var.DESCRIPTION }}"
+      - run: echo "Der wert Environmentvariable description ist ${{ vars.DESCRIPTION }}"
       - run: echo "mein benutzer-secret ist ${{ secret.MONGODB_USERNAME }}"
       
       - run: |
