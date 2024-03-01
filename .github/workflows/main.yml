@@ -1,10 +1,11 @@
 name: CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:    
+  workflow_dispatch: 
+    inputs:
+      environment:
+        type: environment
+        required: true
 
 jobs:
   build:
