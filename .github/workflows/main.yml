@@ -18,7 +18,7 @@ jobs:
      
       - run: echo "Die Environment ist ${{inputs.environment }}"
       - run: echo "Der wert Environmentvariable description ist ${{ vars.DESCRIPTION }}"
-      - run: echo "mein benutzer-secret ist ${{ secret.MONGODB_USERNAME }}"
+      - run: echo "mein benutzer-secret ist ${{ secrets.MONGODB_USERNAME }}"
       
       - run: |
          echo "SECRET_API_KEY=$SECRET_API_KEY" >> $GITHUB_ENV
